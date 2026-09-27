@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دعوة زفاف</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="main-card">
+        
+        <!-- 1. غلاف الدعوة -->
+        <div class="envelope-cover" id="envelope" style="background-image: url('cover.jpg');">
+            <div class="cover-overlay"></div>
+            
+            <div class="cover-content" id="coverContent">
+                <div class="stars">✨ ⚜ ✨</div>
+                <h1 class="cover-title">دعوة زفاف</h1>
+                <p class="click-hint pulse-animation">اضغطوا على الختم لفتح الدعوة ↓</p>
+                
+                <div class="seal-container" onclick="openInvitation()">
+                    <div class="seal-glow"></div>
+                    <img src="seal.png" alt="الختم" class="seal-img animated-seal">
+                    <div class="seal-welcome-badge">✦ أهلاً وسهلاً بكم ✦</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. المحتوى الداخلي -->
+        <div class="invitation-content" id="invitationContent" style="display: none; background-image: url('inner-bg.jpg');">
+            
+            <div class="hearts-rain" id="heartsContainer"></div>
+
+            <!-- فيديو البجع -->
+            <div class="video-card">
+                <div class="video-frame">
+                    <video id="weddingVideo" loop playsinline src="video.mp4"></video>
+                    <button class="sound-btn" onclick="toggleSound(event)">🔊 تشغيل الصوت</button>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div class="crown-icon">👑</div>
+                <h2 class="main-heading">حفل زفاف</h2>
+                
+                <p class="intro-text">بقلوب تملؤها البهجة والسرور، تتشرف</p>
+                <h3 class="family-name">عائلة نمر السفر</h3>
+                <p class="intro-text">بدعوتكم الكريمة لحضور حفل زفاف أبنائهم وبناتهم</p>
+
+                <!-- أسماء العرسان كنصوص عادية مرتبة -->
+                <div class="couples-text-wrapper">
+                    <div class="couple-name-item">العريس صابر &amp; أميرته</div>
+                    <div class="couple-name-item">العريس نضال &amp; أميرته</div>
+                    <div class="couple-name-item">العريس محمد &amp; أميرته</div>
+                </div>
+
+                <p class="welcome-note">مرحباً بكم في ليلة العمر، حضوركم يبهجنا وفرحتنا تكتمل بوجودكم معنا.</p>
+
+                <!-- الآية القرآنية -->
+                <div class="quran-card">
+                    <img src="aya.jpg" alt="آية قرآنية">
+                </div>
+
+                <!-- معرض الصور -->
+                <div class="slider-box">
+                    <img id="sliderImage" src="1.jpg" alt="صور الزفاف" class="fade-in">
+                </div>
+
+                <!-- بوكسات الحناء والعرس -->
+                <div class="custom-boxes-wrapper">
+                    
+                    <div class="custom-box-card">
+                        <img src="henna.jpg" alt="بوكس الحناء" class="box-bg-img">
+                        <div class="box-text-overlay">
+                            <div class="box-header-title">🌿 ليلة الحناء 🌿</div>
+                            <p class="box-date">📅 الخميس، 08/10/2026</p>
+                            <p class="box-time">🕒 الساعة 05:00 مساءً</p>
+                        </div>
+                    </div>
+
+                    <div class="custom-box-card">
+                        <img src="wedding.jpg" alt="بوكس العرس" class="box-bg-img">
+                        <div class="box-text-overlay">
+                            <div class="box-header-title">✨ ليلة الزفاف ✨</div>
+                            <p class="box-date">📅 الجمعة، 09/10/2026</p>
+                            <p class="box-time">🕒 الساعة 04:00 مساءً</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- العداد التنازلي -->
+                <div class="countdown-card">
+                    <div class="countdown-title">⏳ المتبقي على ليلة العمر</div>
+                    <div class="timer-boxes">
+                        <div class="timer-unit"><span id="days">00</span><label>يوم</label></div>
+                        <div class="timer-unit"><span id="hours">00</span><label>ساعة</label></div>
+                        <div class="timer-unit"><span id="minutes">00</span><label>دقيقة</label></div>
+                        <div class="timer-unit"><span id="seconds">00</span><label>ثانية</label></div>
+                    </div>
+                    
+                    <div class="date-display">
+                        <span>الجمعة</span>
+                        <span>أكتوبر</span>
+                        <span>2026</span>
+                    </div>
+                    <div class="day-circle">09</div>
+                    <div class="time-text">🕒 الساعة 05:00 مساءً</div>
+                </div>
+
+                <!-- قواعد الحفل -->
+                <div class="rules-box-card">
+                    <div class="rule-item">
+                        <span class="rule-icon">📸</span>
+                        <p>نرجو عدم التصوير لخصوصية الحفل</p>
+                    </div>
+                    <div class="rule-divider"></div>
+                    <div class="rule-item">
+                        <span class="rule-icon">👶</span>
+                        <p>جنة الأطفال منازلهم</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const images = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg'];
+        let currentIndex = 0;
+
+        function openInvitation() {
+            document.getElementById('envelope').style.display = 'none';
+            document.getElementById('invitationContent').style.display = 'block';
+            
+            const video = document.getElementById('weddingVideo');
+            video.muted = false;
+            video.play().catch(() => {
+                video.muted = true;
+                video.play();
+            });
+
+            createHearts();
+            startImageSlider();
+            startCountdown();
+        }
+
+        function toggleSound(e) {
+            const video = document.getElementById('weddingVideo');
+            video.muted = !video.muted;
+            e.target.innerText = video.muted ? "🔊 تشغيل الصوت" : "🔊 كتم الصوت";
+        }
+
+        function createHearts() {
+            const container = document.getElementById('heartsContainer');
+            for (let i = 0; i < 25; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = '❤️';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                container.appendChild(heart);
+            }
+        }
+
+        function startImageSlider() {
+            const imgElement = document.getElementById('sliderImage');
+            setInterval(() => {
+                imgElement.classList.remove('fade-in');
+                setTimeout(() => {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    imgElement.src = images[currentIndex];
+                    imgElement.classList.add('fade-in');
+                }, 300);
+            }, 3500);
+        }
+
+        function startCountdown() {
+            const targetDate = new Date('October 9, 2026 17:00:00').getTime();
+
+            setInterval(() => {
+                const now = new Date().getTime();
+                const difference = targetDate - now;
+
+                if (difference > 0) {
+                    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                    document.getElementById('days').innerText = days;
+                    document.getElementById('hours').innerText = hours;
+                    document.getElementById('minutes').innerText = minutes;
+                    document.getElementById('seconds').innerText = seconds;
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
